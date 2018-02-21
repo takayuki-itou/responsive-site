@@ -22,7 +22,6 @@ body{
   background-color: $baseColor;
 }
   
-
 a {
   @include link-colors($keyColor, darken($keyColor, 10%), lighten($keyColor, 5%), darken($keyColor, 10%));
   text-decoration: none;
@@ -159,7 +158,6 @@ p {
 footer {
     background-color: $baseColor;
     padding-top: 10px; 
-    color: #FFF;
     }
 
     .link-button {
