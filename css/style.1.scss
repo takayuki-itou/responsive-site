@@ -1,0 +1,184 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+// font-family
+$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// colors
+$baseColor: #a86f4c; /*フッターの茶色*/
+$subColor: #fef4f4;  /*文字・背景のピンク*/
+$keyColor:  #ff0000; /*リンクの赤*/
+$fontColor: #fef4f4; 
+
+/* Base
+------------------------------------------------------------*/
+html{ font-size: 62.5%; }
+
+body{
+  color: $fontColor;
+  font-size: 1.4rem;
+  font-family:$baseFontFamily;
+  line-height:1.6;
+  letter-spacing: 0.1em; 
+  background-color: $baseColor;
+}
+  
+
+a {
+  @include link-colors($keyColor, darken($keyColor, 10%), lighten($keyColor, 5%), darken($keyColor, 10%));
+  text-decoration: none;
+}
+
+// 上でhover時darkenにしてるのにならない。が下を追記するとうまく行く。？？
+
+@media (min-width: 769px) {
+  a :hover {
+  background-color: darken($keyColor, 10%);
+  }
+}
+
+
+/* Align
+------------------------------------------------------------*/
+.text-center {
+  text-align: center; 
+}
+
+/* Layout
+------------------------------------------------------------*/
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}     
+
+/* Font
+------------------------------------------------------------*/
+.abel {  
+  font-family: 'Abel', sans-serif;
+}　
+
+.uppercase {                         //削除できない？？
+  text-transform: uppercase;
+}    
+
+
+.header-image {
+  background-image: url("../image/6fd0cd9e.jpg");
+  height: 250px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+// desktop ??
+
+@media (min-width: 769px) {
+  .header-image {
+      height: 500px;
+    } 
+  }
+
+
+/* Contents
+------------------------------------------------------------*/
+// Common Styles
+section {
+  padding: 60px 0;
+  .container {
+    width: 90%;
+    @extend .block-center; 
+  }
+}
+
+h1 {
+    @extend .abel;
+    color: $baseColor;
+    margin-bottom: 30px;
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+
+h2 {
+    @extend .abel;
+    color: $subColor;
+    margin:0 ;
+    font-size: 2.4rem;
+    background-color: #999393 ;
+}
+  
+h3 {
+    @extend .abel;
+    @extend .text-center;
+    color: $fontColor;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    font-size: 1.8rem;
+}
+
+p {
+  padding: 20px;
+}
+  
+
+// main 
+#main {
+  background-color: $subColor;
+  padding-top: 30px;
+  padding-bottom: 90px;
+  .container {
+    @include display-flex;
+    justify-content: space-between;
+    @include flex-direction(column); 
+  }
+
+  .main-box {
+    @include flex(1);
+    margin: 10px 0;                   
+    padding: 0 px;
+    background-color: $baseColor;
+    @include border-radius(4px);
+    @include box-sizing(border-box);
+  }
+}
+
+// desktop
+@media (min-width: 769px) {
+  #main {
+    .container {
+      @include flex-direction(row);     
+      justify-content: space-between;
+    }
+    .main-box {
+      margin: 0 10px;                   
+    }
+  }
+}
+
+/* footer---------------------------------*/
+
+footer {
+    background-color: $baseColor;
+    padding-top: 10px; 
+    color: #FFF;
+    }
+
+    .link-button {
+    padding: 5px 0;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    width: 270px;
+    font-weight: bold;
+    background-color: $keyColor;
+    @extend .abel;
+    @extend .text-center;
+    @extend .block-center;
+    @include border-radius(4px);
+    font-size: 1.6rem;
+    color: $subColor 
+    }
+    
+
+    
+
+
+
