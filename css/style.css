@@ -17,14 +17,7 @@ body {
   background-color: #a86f4c; }
 
 a {
-  color: #ff0000;
   text-decoration: none; }
-  a:visited {
-    color: #cc0000; }
-  a:hover {
-    color: #cc0000; }
-  a:active {
-    color: #ff1a1a; }
 
 @media (min-width: 769px) {
   a :hover {

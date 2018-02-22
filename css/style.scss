@@ -23,17 +23,15 @@ body{
 }
   
 a {
-  @include link-colors($keyColor, darken($keyColor, 10%), lighten($keyColor, 5%), darken($keyColor, 10%));
   text-decoration: none;
 }
-
-// 上でhover時darkenにしてるのにならない。が下を追記するとうまく行く。？？
 
 @media (min-width: 769px) {
   a :hover {
   background-color: darken($keyColor, 10%);
   }
 }
+
 
 
 /* Align
@@ -69,7 +67,7 @@ a {
   background-position: center center;
 }
 
-// desktop ??
+// desktop 
 
 @media (min-width: 769px) {
   .header-image {
@@ -172,7 +170,7 @@ footer {
     @extend .block-center;
     @include border-radius(4px);
     font-size: 1.6rem;
-    color: $subColor 
+    color: $fontColor;
     }
     
 
